@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* NAVBAR 1 */
+
+#navbar1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0 20px;
+}
+
+#navbar1 .logo{
+    font-size: 30px;
+    font-weight: bold;
+    color: blue;
+    flex-shrink: 0;
+}
+
+#navbar1 button{
+    border-radius: 15px;
+}
+
+#navbar1 ul{
+    display: flex;
+    list-style: none;
+    padding-inline: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#navbar1 ul li{
+    margin: 0 20px;
+}
+
+#navbar1 ul li a{
+    gap: 30px;
+    text-decoration: none;
+}
+
+.sidebar{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.sidebar a{
+    margin: 0;
+    text-decoration: none;
+}
+
+.sidebar button{
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+/* NAVBAR 2 */
+#navbar2{
+    margin-top: 20px;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    border-top:1px solid rgba(231, 231, 231, 0.911);
+
+}
+#navbar2 ul{
+    display: flex;
+    list-style: none;
+    padding-inline: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#navbar2 ul li{
+    padding-top: 20px;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+
+main{
+    background-color: chartreuse;
+}
+
+
+footer{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height:50px;
+    align-items: center;
+    justify-content: center;
+}
