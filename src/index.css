@@ -7,6 +7,7 @@
 /* NAVBAR 1 */
 
 #navbar1{
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,6 +42,18 @@
 #navbar1 ul li a{
     gap: 30px;
     text-decoration: none;
+    color: rgb(168, 168, 168);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+#navbar1 ul li a:hover{
+    color: #000;
+    padding: 10px;
+    background-color: #ccccccc5;
+    border-radius: 15px;
+    transition: 0.7s;
+    /* background-color: #ccc; */
 }
 
 .sidebar{
@@ -74,8 +87,6 @@
     list-style: none;
     padding-inline: 20px;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 #navbar2 ul li{
