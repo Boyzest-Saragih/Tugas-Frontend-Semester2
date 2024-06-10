@@ -20,7 +20,21 @@
       </ul>
       <div class="sidebar">
         <a href="#">Make your vehicle an Airbgb</a>
-        <button>Login</button>
+        <button class="cta" id="btn-popup">
+          <span>Menu</span>
+          <svg width="15px" height="10px" viewBox="0 0 13 10">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </button>
+        <div id="popup" class="popup">
+          <div class="popup-content">
+              <a href="#">Daftar</a>
+              <a href="#">Masuk</a>
+              <hr>
+              <a href="#">Bantuan</a>
+          </div>
+      </div>
       </div>
     </header>
     <header id="navbar2">
@@ -39,5 +53,6 @@
     <footer>
       <p>© 2024 Airbgb, Inc</p>
     </footer>
+    <script src="./src/script.js"></script>
   </body>
 </html>
