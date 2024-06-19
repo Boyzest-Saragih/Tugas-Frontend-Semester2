@@ -1,57 +1,100 @@
 document.addEventListener("DOMContentLoaded", function () {
   let popup = document.getElementById("popup");
   let openPopupBtn = document.getElementById("btn-popup");
+  let daftarPopup = document.getElementById("register-popup");
+  let loginPopup = document.getElementById("login-popup");
+  let daftarBtns = document.getElementsByClassName("daftar-popup");
+  let loginBtns = document.getElementsByClassName("login-BTN");
+
+  function toggleDisplay(element) {
+    if (element.style.display === "block") {
+      element.style.display = "none";
+    } else {
+      element.style.display = "block";
+    }
+  }
 
   openPopupBtn.addEventListener("click", function (event) {
     event.stopPropagation();
-    if (popup.style.display === "block") {
-      popup.style.display = "none";
-    } else {
-      popup.style.display = "block";
-    }
+    toggleDisplay(popup);
+  });
+
+  Array.from(daftarBtns).forEach(function (btn) {
+    btn.addEventListener("click", function (event) {
+      event.stopPropagation();
+      if (daftarPopup.style.display === "block") {
+        daftarPopup.style.display = "none";
+      } else {
+        fetch("./src/register.html")
+          .then((response) => response.text())
+          .then((data) => {
+            daftarPopup.innerHTML = data;
+            daftarPopup.style.display = "block";
+
+            let container = daftarPopup.querySelector(".container");
+
+            container.addEventListener("click", function (event) {
+              event.stopPropagation();
+            });
+
+            container.querySelector("form").addEventListener("submit", function (event) {
+              event.preventDefault();
+              console.log("Form pendaftaran dikirim");
+              daftarPopup.style.display = "none";
+            });
+          })
+          .catch((error) => console.log("ERROR memuat popup: ", error));
+      }
+    });
+  });
+
+  Array.from(loginBtns).forEach(function (btn) {
+    btn.addEventListener("click", function (event) {
+      event.stopPropagation();
+      if (loginPopup.style.display === "block") {
+        loginPopup.style.display = "none";
+      } else {
+        fetch("./src/login.html")
+          .then((response) => response.text())
+          .then((data) => {
+            loginPopup.innerHTML = data;
+            loginPopup.style.display = "block";
+
+            let container = loginPopup.querySelector(".container");
+
+            container.addEventListener("click", function (event) {
+              event.stopPropagation();
+            });
+
+            container.querySelector("form").addEventListener("submit", function (event) {
+              event.preventDefault();
+              console.log("Form login dikirim");
+              loginPopup.style.display = "none";
+            });
+          })
+          .catch((error) => console.log("ERROR memuat popup: ", error));
+      }
+    });
   });
 
   document.addEventListener("click", function (event) {
-    let isClickInside =
-      popup.contains(event.target) || openPopupBtn.contains(event.target);
-    if (!isClickInside) {
+    let isClickInsidePopup = popup.contains(event.target) || openPopupBtn.contains(event.target);
+    let isClickInsideDaftar = daftarPopup.contains(event.target) || Array.from(daftarBtns).some(btn => btn.contains(event.target));
+    let isClickInsideLogin = loginPopup.contains(event.target) || Array.from(loginBtns).some(btn => btn.contains(event.target));
+
+    if (!isClickInsidePopup) {
+      console.log("Klik di luar popup utama");
       popup.style.display = "none";
     }
-  });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
-  let daftarPopup = document.getElementById("register-popup");
-  let daftarBtn = document.getElementById("daftar-popup");
-  let container = document.querySelector(".container");
-
-  daftarBtn.addEventListener("click", function (event) {
-    event.stopPropagation();
-    if (daftarPopup.style.display === "block") {
-      daftarPopup.style.display = "none";
-    } else {
-      fetch("./src/register.html")
-        .then((response) => response.text())
-        .then((data) => {
-          daftarPopup.innerHTML = data;
-          daftarPopup.style.display = "block";
-        })
-        .catch((error) => console.log("ERROR loading popup ", error));
-    }
-  });
-
-  document.addEventListener("click", function (event) {
-    let isClickInside =
-      daftarPopup.contains(event.target) || daftarBtn.contains(event.target);
-    if (!isClickInside) {
+    if (!isClickInsideDaftar) {
+      console.log("Klik di luar popup pendaftaran");
       daftarPopup.style.display = "none";
     }
-    if (!container.contains(event.target)) {
-      container.style.display = "none";
-    }
-  });
 
-  document.querySelector("form").addEventListener("submit", function () {
-    container.style.display = "none";
+    if (!isClickInsideLogin) {
+      console.log("Klik di luar popup login");
+      loginPopup.style.display = "none";
+    }
   });
 });
