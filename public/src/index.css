@@ -304,13 +304,13 @@ main{
     border-radius: 10px;
 }
 
-.item-card h3 {
-    /* margin-top: 5px; */
+/* .item-card h3 {
+    margin-top: 5px;
 }
 
 .item-card p {
-    /* margin: 5px 0; */
-}
+    margin: 5px 0;
+} */
 
 .item-card .price {
     color: #e91e63;
@@ -321,7 +321,7 @@ main{
     color: #757575;
 }
 
-/* MAIN */
+/* MAIN END*/
 
 footer{
     display: flex;
@@ -331,3 +331,6 @@ footer{
     align-items: center;
     justify-content: center;
 }
+
+
+

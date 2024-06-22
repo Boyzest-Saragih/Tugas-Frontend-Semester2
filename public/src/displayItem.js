@@ -21,12 +21,16 @@ document.addEventListener("DOMContentLoaded", function () {
             vehicleElement.classList.add('item-card');
 
             vehicleElement.innerHTML = `
-                <img src="${vehicle.image}" alt="${vehicle.name}">
+                <img src="${vehicle.image[0]}" alt="${vehicle.name}">
                 <h3>${vehicle.name}</h3>
                 <p class="price">Price: ${vehicle.pricePerDay}</p>
                 <p class="description">${vehicle.description}</p>
                 <p class="location">Location: ${vehicle.location}</p>
             `;
+
+            vehicleElement.addEventListener('click', function () {
+                window.location.href = `vehicleDetail.html?name=${encodeURIComponent(vehicle.name)}`;
+            });
 
             mainContent.appendChild(vehicleElement);
         });
