@@ -254,6 +254,11 @@ form{
 .remember-forgot{
     display: flex;
     justify-content: space-between;
+    font-size: small;
+}
+
+.register-link{
+    font-size: small;
 }
 
 .btn-form{
@@ -261,6 +266,14 @@ form{
     padding: 10px 30px;
     border-radius: 15px;
     cursor: pointer;
+    background-color: hsl(206, 100%, 69%);
+    color: white;
+    margin: 15px;
+    width: 160px;
+}
+
+.btn-form:hover{
+    background-color: #76a0cf;
 }
 
 /* FORM REGISTER END */
