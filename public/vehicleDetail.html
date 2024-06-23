@@ -4,18 +4,68 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vehicle Detail</title>
-    <link rel="stylesheet" href="./src/index.css" />
+    <link rel="stylesheet" href="./src/app.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
   </head>
   <body>
     <header>
-      <div class="logo">Airbgb.</div>
+      <a href="./index.html"
+        ><span class="material-symbols-outlined"> arrow_back </span></a
+      >
     </header>
     <main class="main-content">
-      <div id="vehicle-detail"></div>
+      <div id="vehicle-detail">
+        <div class="name"></div>
+        <div class="gallery"></div>
+      </div>
+      <div class="container">
+        <div class="description">
+          <h4>Description</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+            assumenda veniam quo voluptatum magni earum minus libero repellendus
+            dolore officiis provident placeat impedit quis voluptatibus
+            explicabo, aspernatur suscipit est. Ad laborum fugiat mollitia,
+            repellendus ut ratione nihil facere, similique unde dignissimos quo
+            eos quaerat reprehenderit asperiores consectetur cum quod assumenda
+            molestiae explicabo officiis ullam culpa nostrum! Iusto perferendis
+            similique, delectus minus ipsam suscipit necessitatibus repudiandae
+            officia dolore ducimus et, quibusdam exercitationem ut velit,
+            repellendus quisquam dicta officiis? Placeat quia, cumque quam quis
+            quo laborum deserunt consequuntur animi odit, ipsa consectetur, in
+            modi pariatur omnis quasi minima earum sint enim. Rerum consectetur
+            ducimus ipsa, dolore cupiditate velit ea magnam, inventore adipisci
+            expedita aspernatur eum quam nihil molestias ullam deleniti ut
+            aliquid, nostrum sequi veniam veritatis nobis unde doloribus? Vel
+            tenetur cum alias excepturi nostrum corrupti illo consequuntur et!
+            Iusto facilis tenetur temporibus neque voluptatibus illo aut maiores
+            praesentium quasi eius eos impedit nihil repellat possimus vero
+            soluta velit officiis, amet facere. Corporis nostrum ipsam, aliquid
+            sequi aperiam modi deleniti neque, labore praesentium, consequuntur
+            culpa voluptas saepe impedit officia architecto! Animi, sapiente
+            vero. Repellat deleniti et esse quisquam fuga at ipsam vitae
+            excepturi modi sequi eos voluptatem, dolores velit fugiat.
+            Recusandae, maxime.
+          </p>
+        </div>
+        <div class="order-section">
+          <div class="order-card">
+            <p>$100 / day</p>
+            <input class="date" type="date" id="order-start" />
+            <input class="date" type="date" id="order-end" /><br />
+            <button>ORDER</button>
+            <p id="total-price"></p>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <p>© 2024 Airbgb, Inc</p>
     </footer>
-    <script src="./src/vehicleDetail.js"></script>
+    <script type="module" src="./src/vehicleDetail.js"></script>
+    <script type="module" src="./src/order.js"></script>
   </body>
 </html>

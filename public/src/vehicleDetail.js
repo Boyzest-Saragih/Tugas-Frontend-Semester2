@@ -1,34 +1,32 @@
-import vehicles from './item.js';
+import vehicles from "./item.js";
 
 document.addEventListener("DOMContentLoaded", function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    const vehicleName = urlParams.get('name');
+  const vehicleDetail = document.getElementById("vehicle-detail");
+  const urlParams = new URLSearchParams(window.location.search);
+  const vehicleName = urlParams.get("name");
 
-    let vehicle;
-
-    // Cari kendaraan berdasarkan nama di semua kategori
-    Object.keys(vehicles).forEach(category => {
-        vehicles[category].forEach(v => {
-            if (v.name === vehicleName) {
-                vehicle = v;
-            }
-        });
+  if (vehicleName) {
+    let selectedVehicle;
+    Object.keys(vehicles).forEach((category) => {
+      vehicles[category].forEach((vehicle) => {
+        if (vehicle.name === vehicleName) {
+          selectedVehicle = vehicle;
+        }
+      });
     });
 
-    if (vehicle) {
-        const vehicleDetail = document.getElementById('vehicle-detail');
-        vehicleDetail.innerHTML = `
-            <img src="${vehicle.image[0]}" alt="${vehicle.name}">
-            <h3>${vehicle.name}</h3>
-            <p class="price">Price: ${vehicle.pricePerDay}</p>
-            <p class="description">${vehicle.description}</p>
-            <p class="location">Location: ${vehicle.location}</p>
-            <div class="gallery">
-                ${vehicle.image.map(img => `<img src="${img}" alt="${vehicle.name}">`).join('')}
+    if (selectedVehicle) {
+      vehicleDetail.innerHTML = `
+            <div class="item-card">
+              <h3 class="name">${selectedVehicle.name}</h3>
+              <div class="gallery">
+                <img class="item1" src="${selectedVehicle.media[0]}" alt="${selectedVehicle.name[0]}">
+                <img class="item2" src="${selectedVehicle.media[1]}" alt="${selectedVehicle.name[1]}">
+                <img class="item3" src="${selectedVehicle.media[2]}" alt="${selectedVehicle.name[2]}">
+                <img class="item4" src="${selectedVehicle.media[3]}" alt="${selectedVehicle.name[3]}">
+              </div>
             </div>
-        `;
-    } else {
-        const vehicleDetail = document.getElementById('vehicle-detail');
-        vehicleDetail.innerHTML = '<p>Vehicle not found.</p>';
+          `;
     }
+  }
 });
