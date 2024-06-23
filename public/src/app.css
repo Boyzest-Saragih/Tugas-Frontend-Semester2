@@ -18,6 +18,17 @@ body {
   padding: 0 80px;
 }
 
+
+#video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
 .name {
   font-size: 30px;
   text-align: center;
@@ -85,12 +96,20 @@ img {
   gap: 15px;
 }
 
+.trapezoid{
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+}
+
 .order-section {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+
 
 .order-card {
   display: flex;
@@ -144,6 +163,8 @@ button:hover{
 #total-price{
     color: red;
 }
+
+
 
 footer {
   display: flex;
