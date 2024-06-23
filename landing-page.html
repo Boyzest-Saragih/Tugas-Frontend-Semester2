@@ -22,9 +22,15 @@
       z-index: -1;
     }
     .content {
-      position: relative;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       z-index: 1;
-      padding-top: 20%;
+      height: 100vh;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.377);
     }
 
     .btn-order {
@@ -47,7 +53,7 @@
 </head>
 <body>
   <video id="video-background" autoplay muted loop>
-    <source src="./public/vidio/background.mp4" type="video/mp4">
+    <source src="./public/vidio/bg.mp4" type="video/mp4">
   </video>
 
   <div class="content">
