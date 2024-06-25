@@ -39,11 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             container.querySelector("form").addEventListener("submit", function (event) {
               event.preventDefault();
-              console.log("Form pendaftaran dikirim");
               daftarPopup.style.display = "none";
             });
           })
-          .catch((error) => console.log("ERROR memuat popup: ", error));
       }
     });
   });
@@ -68,11 +66,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             container.querySelector("form").addEventListener("submit", function (event) {
               event.preventDefault();
-              console.log("Form login dikirim");
               loginPopup.style.display = "none";
             });
           })
-          .catch((error) => console.log("ERROR memuat popup: ", error));
       }
     });
   });
@@ -83,17 +79,14 @@ document.addEventListener("DOMContentLoaded", function () {
     let isClickInsideLogin = loginPopup.contains(event.target) || Array.from(loginBtns).some(btn => btn.contains(event.target));
 
     if (!isClickInsidePopup) {
-      console.log("Klik di luar popup utama");
       popup.style.display = "none";
     }
 
     if (!isClickInsideDaftar) {
-      console.log("Klik di luar popup pendaftaran");
       daftarPopup.style.display = "none";
     }
 
     if (!isClickInsideLogin) {
-      console.log("Klik di luar popup login");
       loginPopup.style.display = "none";
     }
   });

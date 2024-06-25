@@ -1,1 +1,1 @@
-kasih paham dulu ngab
+alamak

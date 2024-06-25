@@ -15,9 +15,9 @@
       <source src="./vidio/bg2.mp4" type="video/mp4">
     </video>
     <header>
-      <a href="./index.html"
-        ><span class="material-symbols-outlined"> arrow_back </span></a
-      >
+      <a href="#" onclick="goBack()">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </a>
     </header>
     <main class="main-content">
       <div id="vehicle-detail">
@@ -37,23 +37,25 @@
             molestiae explicabo officiis ullam culpa nostrum! Iusto perferendis
             similique, delectus minus ipsam suscipit necessitatibus repudiandae
             officia dolore ducimus et, quibusdam exercitationem ut velit,
-            repellendus quisquam dicta officiis? 
-            <p class="trapezoid">Placeat quia, cumque quam quis
-              quo laborum deserunt consequuntur animi odit, ipsa consectetur, in
-              modi pariatur omnis quasi minima earum sint enim. Rerum consectetur
-              ducimus ipsa, dolore cupiditate velit ea magnam, inventore adipisci
-              expedita aspernatur eum quam nihil molestias ullam deleniti ut
-              aliquid, nostrum sequi veniam veritatis nobis unde doloribus?</p>
-              <p class="trapezoid"> Vel
-                tenetur cum alias excepturi nostrum corrupti illo consequuntur et!
-                Iusto facilis tenetur temporibus neque voluptatibus illo aut maiores
-                praesentium quasi eius eos impedit nihil repellat possimus vero
-                soluta velit officiis, amet facere. Corporis nostrum ipsam, aliquid
-                sequi aperiam modi deleniti neque, labore praesentium, consequuntur
-                culpa voluptas saepe impedit officia architecto! Animi, sapiente
-                vero. Repellat deleniti et esse quisquam fuga at ipsam vitae
-                excepturi modi sequi eos voluptatem, dolores velit fugiat.
-                Recusandae, maxime.</p>
+            repellendus quisquam dicta officiis?
+          </p>
+          <p class="trapezoid">
+            Placeat quia, cumque quam quis quo laborum deserunt consequuntur animi odit, ipsa consectetur, in
+            modi pariatur omnis quasi minima earum sint enim. Rerum consectetur
+            ducimus ipsa, dolore cupiditate velit ea magnam, inventore adipisci
+            expedita aspernatur eum quam nihil molestias ullam deleniti ut
+            aliquid, nostrum sequi veniam veritatis nobis unde doloribus?
+          </p>
+          <p class="trapezoid">
+            Vel tenetur cum alias excepturi nostrum corrupti illo consequuntur et!
+            Iusto facilis tenetur temporibus neque voluptatibus illo aut maiores
+            praesentium quasi eius eos impedit nihil repellat possimus vero
+            soluta velit officiis, amet facere. Corporis nostrum ipsam, aliquid
+            sequi aperiam modi deleniti neque, labore praesentium, consequuntur
+            culpa voluptas saepe impedit officia architecto! Animi, sapiente
+            vero. Repellat deleniti et esse quisquam fuga at ipsam vitae
+            excepturi modi sequi eos voluptatem, dolores velit fugiat.
+            Recusandae, maxime.
           </p>
         </div>
         <div class="order-section">
@@ -63,7 +65,7 @@
             <input class="date" type="date" id="order-end" />
             <p class="alert">Harga belum termasuk Biaya Bensin</p>
             <button>ORDER</button>
-            <p id="total-price"> Total price : </p>
+            <p id="total-price">Total price:</p>
           </div>
         </div>
       </div>
@@ -71,6 +73,11 @@
     <footer>
       <p>© 2024 Airbgb, Inc</p>
     </footer>
+    <script>
+       function goBack() {
+            window.history.back();
+        }
+    </script>
     <script type="module" src="./src/vehicleDetail.js"></script>
     <script type="module" src="./src/order.js"></script>
   </body>
